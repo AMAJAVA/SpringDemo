@@ -14,7 +14,7 @@
     </bean>
     <!-- Spring Logging Init Bean -->
     <bean id="myLoggerConfig" 
-    	class="ama..springdemo.MyLoggerConfig" init-method="initLogger">
+    	class="com.ama.springdemo.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
