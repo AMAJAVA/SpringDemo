@@ -7,27 +7,31 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- define the dependency -->
 	
+	 <bean id="myFortune"
+    	class="com.ama.springdemo.HappyFortuneService">
+    </bean>
+    
     <!-- Spring Demo Beans -->
+    
     <bean id="myCoach"
         class="com.ama.springdemo.BaseballCoach">
+        <!-- Set up constructor injection -->
+       	 <constructor-arg ref="myFortune" />
     </bean>
-     <bean id="footballCoach"
+    
+    <bean id="footballCoach"
         class="com.ama.springdemo.FootballCoach">
+        <!-- Set up constructor injection -->
+       	 <constructor-arg ref="myFortune" />
     </bean>
+    
     <!-- Spring Logging Init Bean -->
+    
     <bean id="myLoggerConfig" 
     	class="com.ama.springdemo.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
-    
-    <!-- define the dependency -->
-
-    <!--
-    <bean id="myCoach"
-        class="com.luv2code.springdemo.BaseballCoach">         
-    </bean>
-    -->
-
 </beans>
