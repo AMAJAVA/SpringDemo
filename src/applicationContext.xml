@@ -12,6 +12,9 @@
     <bean id="myCoach"
         class="com.ama.springdemo.BaseballCoach">
     </bean>
+     <bean id="footballCoach"
+        class="com.ama.springdemo.FootballCoach">
+    </bean>
     <!-- Spring Logging Init Bean -->
     <bean id="myLoggerConfig" 
     	class="com.ama.springdemo.MyLoggerConfig" init-method="initLogger">
