@@ -8,9 +8,15 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	
-    <!-- Define your beans here -->
+    <!-- Spring Demo Beans -->
     <bean id="myCoach"
         class="com.ama.springdemo.BaseballCoach">
+    </bean>
+    <!-- Spring Logging Init Bean -->
+    <bean id="myLoggerConfig" 
+    	class="ama..springdemo.MyLoggerConfig" init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
     
     <!-- define the dependency -->
