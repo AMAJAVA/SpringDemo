@@ -21,6 +21,16 @@
        	 <constructor-arg ref="myFortune" />
     </bean>
     
+    <bean id="trackCoach"
+    	class="com.ama.springdemo.TrackCoach">
+    	 <!-- Set up setter injection -->
+    	 <property name="fortuneService" ref="myFortune" />
+    	 
+    	 <!-- Inject literal values -->
+    	 <property name="emailAdress" value="coach@email.com"/>
+    	 <property name="team" value="first team"/>
+   	</bean>
+    
     <bean id="footballCoach"
         class="com.ama.springdemo.FootballCoach">
         <!-- Set up constructor injection -->
