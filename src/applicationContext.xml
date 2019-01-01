@@ -6,15 +6,20 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-
-	<!-- define the dependency -->
 	
+	<!-- Inject Literal values from a properties file -->
+    <context:property-placeholder location="classpath:sport.properties"/>
+        	
+	<!-- define the dependency -->
 	 <bean id="myFortune"
     	class="com.ama.springdemo.HappyFortuneService">
     </bean>
     
-    <!-- Spring Demo Beans -->
+    <bean id="myLuck"
+    	class="com.ama.springdemo.MyLuckFortuneService">
+    </bean>
     
+    <!-- Spring Demo Beans -->
     <bean id="myCoach"
         class="com.ama.springdemo.BaseballCoach">
         <!-- Set up constructor injection -->
@@ -24,11 +29,11 @@
     <bean id="trackCoach"
     	class="com.ama.springdemo.TrackCoach">
     	 <!-- Set up setter injection -->
-    	 <property name="fortuneService" ref="myFortune" />
-    	 
+    	 <property name="fortuneService" ref="myLuck" />
+    	
     	 <!-- Inject literal values -->
-    	 <property name="emailAdress" value="coach@email.com"/>
-    	 <property name="team" value="first team"/>
+    	 <property name="emailAdress" value="${track.emailAdress}"/>
+    	 <property name="team" value="${track.team}"/>
    	</bean>
     
     <bean id="footballCoach"
@@ -38,7 +43,6 @@
     </bean>
     
     <!-- Spring Logging Init Bean -->
-    
     <bean id="myLoggerConfig" 
     	class="com.ama.springdemo.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
