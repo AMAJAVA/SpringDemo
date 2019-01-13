@@ -20,5 +20,14 @@ public class FootballCoach implements Coach {
 		// use my fortuneService to get fortune ==> a dependency=helper
 		return this.fortuneService.getFortune();
 	}
-
+	
+	// add an init method 
+	public void doMyStartupStuff() {
+		System.out.println("FootBallCoach: inside method doMyStartupStuff");		
+	}
+	
+	// add a destroy method
+	public void doMyCleanupStuff() {
+		System.out.println("FootballCoach: inside method doMyCleanupStuff");		
+	}
 }

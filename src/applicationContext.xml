@@ -40,7 +40,10 @@
    	</bean>
     
     <bean id="footballCoach"
-        class="com.ama.springdemo.FootballCoach">
+        class="com.ama.springdemo.FootballCoach"
+        scope="singleton"
+        init-method="doMyStartupStuff"
+        destroy-method="doMyCleanupStuff">
         <!-- Set up constructor injection -->
        	 <constructor-arg ref="myFortune" />
     </bean>
