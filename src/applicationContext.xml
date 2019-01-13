@@ -11,7 +11,7 @@
     <context:property-placeholder location="classpath:sport.properties"/>
         	
 	<!-- define the dependency -->
-	 <bean id="myFortune"
+	<bean id="myFortune"
     	class="com.ama.springdemo.HappyFortuneService">
     </bean>
     
@@ -20,8 +20,11 @@
     </bean>
     
     <!-- Spring Demo Beans -->
+    
+    <!-- Explicity specify the scope used by the bean (by default singleton) -->
     <bean id="myCoach"
-        class="com.ama.springdemo.BaseballCoach">
+        class="com.ama.springdemo.BaseballCoach"
+        scope="singleton">
         <!-- Set up constructor injection -->
        	 <constructor-arg ref="myFortune" />
     </bean>
